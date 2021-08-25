@@ -6,7 +6,10 @@
 body {
   height: 100vh;
   width: 100vw;
-  background-image: url("background.jpg");
+  background-image: url("../background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Righteous', cursive;
   header{
     display: flex;
