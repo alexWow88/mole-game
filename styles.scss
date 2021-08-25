@@ -1,0 +1,42 @@
+* {
+  padding : 0;
+  margin : 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("background.png");
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 51, 0);
+    text-shadow: 1px 1px 2px #eeff00, 0 0 25px #ffe600, 0 0 5px #ffae00;
+    font-family: 'Righteous', cursive;
+    padding: 40px;
+    .game-name {
+      display: flex;
+      text-align: center;
+      font-size: 30px;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+    }
+    img {
+      padding-top: 45px;
+      font-size: 80px;
+      position:absolute;
+      transform: translate(-10px , 0);
+    }
+  }
+  main{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/* style the buttons to look like holes
+on click styling
+*/
