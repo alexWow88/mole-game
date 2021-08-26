@@ -1,3 +1,5 @@
+"use strict";
+
 // Random number generator to pull which phrase will be on screen
 //depending on which random number, different grid?array will be input (phrase). will need separate styling 
 //operator to have 6 guess. must receive inputs via keyboard input
@@ -8,5 +10,49 @@
 //randomly set a button to active (show mole)
 //log a point when mole is clicked and deactivate button
 //// when timer is out, display score
-// 
-"use strict";
+var startButton = document.querySelector(".start__button");
+var moleOne = document.querySelector(".mole-1");
+var moleTwo = document.querySelector(".mole-2");
+var moleThree = document.querySelector(".mole-3");
+var moleFour = document.querySelector(".mole-4");
+var moleFive = document.querySelector(".mole-5");
+var moleSix = document.querySelector(".mole-6");
+var moleSeven = document.querySelector(".mole-7");
+var moleEight = document.querySelector(".mole-8");
+var moleNine = document.querySelector(".mole-9");
+var moleTen = document.querySelector(".mole-10");
+var scoreDisplay = document.querySelector(".score__display__result");
+var count = 0;
+
+var scoreAcc = function scoreAcc() {
+  count += 1;
+  scoreDisplay.innerHTML = count;
+};
+
+moleOne.addEventListener("click", function () {
+  scoreAcc();
+});
+moleTwo.addEventListener("click", function () {
+  scoreAcc();
+});
+moleThree.addEventListener("click", function () {
+  scoreAcc();
+});
+moleFour.addEventListener("click", function () {
+  scoreAcc();
+});
+moleFive.addEventListener("click", function () {
+  scoreAcc();
+});
+moleSix.addEventListener("click", function () {
+  scoreAcc();
+});
+moleSeven.addEventListener("click", function () {
+  scoreAcc();
+});
+moleEight.addEventListener("click", function () {
+  scoreAcc();
+});
+moleNine.addEventListener("click", function () {
+  scoreAcc();
+});
