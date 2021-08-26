@@ -142,13 +142,14 @@ body main .score__display {
   z-index: 2;
 }
 body main .start__button {
-  font-size: 20px;
+  font-size: 22px;
   color: #fbff00;
   background-color: #e7853e;
   text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
   border: 1px solid yellow;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 25%;
+  font-family: "Righteous", cursive;
 }
 @keyframes glowing {
   0% {
