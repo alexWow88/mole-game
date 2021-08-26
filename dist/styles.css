@@ -144,13 +144,23 @@ body main .score__display {
 body main .start__button {
   font-size: 20px;
   color: #fbff00;
-  background-color: #eca571;
+  background-color: #e7853e;
   text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
   border: 1px solid yellow;
   padding: 10px;
   border-radius: 25%;
 }
-
-/* 
-on click styling
-*/
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #ff0000;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff0000;
+  }
+  100% {
+    box-shadow: 0 0 5px #ff0000;
+  }
+}
+body main .start__button {
+  animation: glowing 1300ms infinite;
+}
