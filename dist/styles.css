@@ -58,7 +58,7 @@ body main .holes__row__1 {
 body main .holes__row__1__area {
   width: 80%;
 }
-body main .holes__row__1__area img {
+body main .holes__row__1__area .mole {
   width: 100%;
 }
 body main .holes__row__1__area div {
@@ -78,7 +78,7 @@ body main .holes__row__2 {
 body main .holes__row__2__area {
   width: 80%;
 }
-body main .holes__row__2__area img {
+body main .holes__row__2__area .mole {
   width: 100%;
 }
 body main .holes__row__2__area div {
@@ -99,7 +99,7 @@ body main .holes__row__3__area {
   display: flex;
   flex-direction: column;
 }
-body main .holes__row__3__area img {
+body main .holes__row__3__area .mole {
   width: 100%;
 }
 body main .holes__row__3__area div {

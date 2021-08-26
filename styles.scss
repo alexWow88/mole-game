@@ -53,9 +53,12 @@ body {
         margin-bottom: 20px;
         &__area{
           width: 80%;
-          img {
+          .mole {
             width: 100%;
           }
+          // .mole:active {
+          //   visibility: 0;
+          // }
           div {
             background-color: brown;
             border:1px solid black;
@@ -65,15 +68,17 @@ body {
           }
         }
       }
-      &__row__2{
+      &__row__2 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 13px;
         width: 80%;
         margin-bottom: 25px;
-        &__area{
+
+        &__area {
           width: 80%;
-          img {
+
+          .mole {
             width: 100%;
           }
           div {
@@ -94,7 +99,7 @@ body {
           width: 80%;
           display: flex;
           flex-direction: column;
-          img {
+          .mole {
             width: 100%;
           }
           div {
