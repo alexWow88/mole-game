@@ -55,10 +55,11 @@ body {
           width: 80%;
           .mole {
             width: 100%;
+            visibility: hidden;
           }
-          // .mole:active {
-          //   visibility: 0;
-          // }
+          .active {
+            visibility: visible;
+          }
           div {
             background-color: brown;
             border:1px solid black;
@@ -74,12 +75,14 @@ body {
         gap: 13px;
         width: 80%;
         margin-bottom: 25px;
-
         &__area {
           width: 80%;
-
           .mole {
             width: 100%;
+            visibility: hidden;
+          }
+          .active {
+            visibility: visible;
           }
           div {
             background-color: brown;
@@ -101,6 +104,10 @@ body {
           flex-direction: column;
           .mole {
             width: 100%;
+            visibility: hidden;
+          }
+          .active {
+            visibility: visible;
           }
           div {
             background-color: brown;

@@ -33,22 +33,57 @@ const scoreDisplay = document.querySelector(".score__display__result");
 
 let count = 0;
 
+moleAll.forEach(element => element.classList.add("active"));
+
 const scoreAcc = () => {
   count += 1;
   scoreDisplay.innerHTML = count;
+}
+const removeActive = () => {
+  moleAll.forEach(element => {
+    if (element.classList.contains("active")) {
+      element.classList.remove("active");
+  }})
 }
 const gameStart = () => {
   setInterval(function(){    
     let randNum = Math.floor((Math.random() * 10) + 1); 
   
     if (randNum === 1) {
+      removeActive();
       moleOne.setAttribute("class", "mole-1 mole active")
     }
     if (randNum === 2) {
+      removeActive();
       moleTwo.setAttribute("class", "mole-2 mole active")
     }
     if (randNum === 3) {
+      removeActive();
       moleThree.setAttribute("class", "mole-3 mole active")
+    }
+    if (randNum === 4) {
+      removeActive();
+      moleFour.setAttribute("class", "mole-4 mole active")
+    }
+    if (randNum === 5) {
+      removeActive();
+      moleFive.setAttribute("class", "mole-5 mole active")
+    }
+    if (randNum === 6) {
+      removeActive();
+      moleSix.setAttribute("class", "mole-6 mole active")
+    }
+    if (randNum === 7) {
+      removeActive();
+      moleSeven.setAttribute("class", "mole-7 mole active")
+    }
+    if (randNum === 8) {
+      removeActive();
+      moleEight.setAttribute("class", "mole-8 mole active")
+    }
+    if (randNum === 9) {
+      removeActive();
+      moleNine.setAttribute("class", "mole-9 mole active")
     }
     console.log(randNum);
   }, 1000);

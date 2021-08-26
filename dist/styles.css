@@ -60,6 +60,10 @@ body main .holes__row__1__area {
 }
 body main .holes__row__1__area .mole {
   width: 100%;
+  visibility: hidden;
+}
+body main .holes__row__1__area .active {
+  visibility: visible;
 }
 body main .holes__row__1__area div {
   background-color: brown;
@@ -80,6 +84,10 @@ body main .holes__row__2__area {
 }
 body main .holes__row__2__area .mole {
   width: 100%;
+  visibility: hidden;
+}
+body main .holes__row__2__area .active {
+  visibility: visible;
 }
 body main .holes__row__2__area div {
   background-color: brown;
@@ -101,6 +109,10 @@ body main .holes__row__3__area {
 }
 body main .holes__row__3__area .mole {
   width: 100%;
+  visibility: hidden;
+}
+body main .holes__row__3__area .active {
+  visibility: visible;
 }
 body main .holes__row__3__area div {
   background-color: brown;
