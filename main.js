@@ -31,6 +31,7 @@ const moleTen = document.querySelector(".mole-10");
 const moleAll = document.querySelectorAll(".mole");
 const scoreDisplay = document.querySelector(".score__display__result");
 const gameOverDisplay = document.querySelector(".gameover-display");
+const gameOverScore = document.querySelector(".gameover-display__score");
 
 let count = 0;
 let timeOutTrigger = 0;
@@ -90,8 +91,9 @@ const gameStart = () => {
     }
     timeOutTrigger += 1; 
     console.log(timeOutTrigger);
-    if (timeOutTrigger >= 10) {
+    if (timeOutTrigger >= 15) {
       gameOverDisplay.classList.add("display-active")
+      gameOverScore.innerHTML = count;
     }
     console.log(randNum);
   }, 1000);

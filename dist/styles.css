@@ -225,14 +225,40 @@ body main .gameover-display {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: absolute;
   width: 100vw;
   height: 100vh;
   visibility: hidden;
   background-color: rgba(165, 42, 42, 0.952);
+  font-size: 30px;
   color: #fbff00;
   text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
   z-index: 99;
+}
+body main .gameover-display__your-score {
+  padding-top: 3px;
+}
+body main .gameover-display__score {
+  font-size: 50px;
+  animation: pulseEnlarge 1300ms infinite;
+}
+@keyframes pulseEnlarge {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.1, 1.1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  75% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 body main .display-active {
   visibility: visible;
