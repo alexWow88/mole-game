@@ -46,6 +46,7 @@ const removeActive = () => {
   }})
 }
 const gameStart = () => {
+  startButton.classList.remove("active");
   setInterval(function(){    
     let randNum = Math.floor((Math.random() * 10) + 1); 
   

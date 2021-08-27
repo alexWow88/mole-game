@@ -189,15 +189,11 @@ body {
     }
     .start{
       margin-bottom: 10px;
-      &__button {
-        font-size: 22px;
+      .active {
         color: rgb(251, 255, 0);
         background-color: rgb(231, 133, 62);
         text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
         border:1px solid yellow;
-        padding: 5px 10px;
-        border-radius: 25%;
-        font-family: 'Righteous', cursive;
       }
       @keyframes glowing {
         0% {
@@ -210,8 +206,18 @@ body {
           box-shadow: 0 0 5px #ff0000;
         }
     }
-    &__button {
+    .active {
       animation: glowing 1300ms infinite;
+    }
+    &__button{
+      font-size: 22px;
+      padding: 5px 10px;
+      border-radius: 25%;
+      font-family: 'Righteous', cursive;
+      color: black;
+      background-color: rgb(155, 154, 154);
+      text-shadow: 1px 1px 10px black, 0 0 100px grey, 0 0 20px grey;
+      border:1px solid black;
     }
   }
 }

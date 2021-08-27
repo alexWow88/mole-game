@@ -191,15 +191,11 @@ body main .score__display {
 body main .start {
   margin-bottom: 10px;
 }
-body main .start__button {
-  font-size: 22px;
+body main .start .active {
   color: #fbff00;
   background-color: #e7853e;
   text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
   border: 1px solid yellow;
-  padding: 5px 10px;
-  border-radius: 25%;
-  font-family: "Righteous", cursive;
 }
 @keyframes glowing {
   0% {
@@ -212,6 +208,16 @@ body main .start__button {
     box-shadow: 0 0 5px #ff0000;
   }
 }
-body main .start__button {
+body main .start .active {
   animation: glowing 1300ms infinite;
+}
+body main .start__button {
+  font-size: 22px;
+  padding: 5px 10px;
+  border-radius: 25%;
+  font-family: "Righteous", cursive;
+  color: black;
+  background-color: #9b9a9a;
+  text-shadow: 1px 1px 10px black, 0 0 100px grey, 0 0 20px grey;
+  border: 1px solid black;
 }
