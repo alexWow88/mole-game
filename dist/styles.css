@@ -4,9 +4,17 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image: url("background.png");
+  background-image: url("../background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Righteous", cursive;
 }
 body header {
   display: flex;
@@ -14,8 +22,8 @@ body header {
   align-items: center;
   color: #ff3300;
   text-shadow: 1px 1px 2px #eeff00, 0 0 25px #ffe600, 0 0 5px #ffae00;
-  font-family: "Righteous", cursive;
   padding: 40px;
+  max-width: 500px;
 }
 body header .game-name {
   display: flex;
@@ -30,12 +38,180 @@ body header img {
   font-size: 80px;
   position: absolute;
   transform: translate(-10px, 0);
+  max-width: 460px;
 }
 body main {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
 }
-
-/* style the buttons to look like holes
-on click styling
-*/
+body main .holes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body main .holes__row__1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+body main .holes__row__1__area {
+  width: 80%;
+}
+body main .holes__row__1__area .mole {
+  width: 100%;
+  visibility: hidden;
+}
+body main .holes__row__1__area .active {
+  visibility: visible;
+}
+@keyframes fadeUp {
+  0% {
+    transform: translate(0px, 25px);
+  }
+  50% {
+    transform: translate(0px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+body main .holes__row__1__area .active {
+  animation: fadeUp 100ms;
+}
+body main .holes__row__1__area div {
+  background-color: brown;
+  border: 1px solid black;
+  height: 10px;
+  width: 100%;
+  border-radius: 50%;
+}
+body main .holes__row__2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 13px;
+  width: 80%;
+  margin-bottom: 25px;
+}
+body main .holes__row__2__area {
+  width: 80%;
+}
+body main .holes__row__2__area .mole {
+  width: 100%;
+  visibility: hidden;
+}
+body main .holes__row__2__area .active {
+  visibility: visible;
+}
+@keyframes fadeUp {
+  0% {
+    transform: translate(0px, 25px);
+  }
+  50% {
+    transform: translate(0px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+body main .holes__row__2__area .active {
+  animation: fadeUp 100ms;
+}
+body main .holes__row__2__area div {
+  background-color: brown;
+  border: 1px solid black;
+  height: 10px;
+  width: 100%;
+  border-radius: 50%;
+}
+body main .holes__row__3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  width: 95%;
+}
+body main .holes__row__3__area {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+body main .holes__row__3__area .mole {
+  width: 100%;
+  visibility: hidden;
+}
+body main .holes__row__3__area .active {
+  visibility: visible;
+}
+@keyframes fadeUp {
+  0% {
+    transform: translate(0px, 25px);
+  }
+  50% {
+    transform: translate(0px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+body main .holes__row__3__area .active {
+  animation: fadeUp 100ms;
+}
+body main .holes__row__3__area div {
+  background-color: brown;
+  border: 1px solid black;
+  height: 10px;
+  width: 100%;
+  border-radius: 50%;
+}
+body main .score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ff3300;
+  text-shadow: 1px 1px 2px #eeff00, 0 0 25px #ffe600, 0 0 5px #ffae00;
+  padding: 10px;
+}
+body main .score__sign {
+  width: 60%;
+  transform: translate(-5px, 0);
+}
+body main .score__display {
+  position: absolute;
+  transform: translate(0, -15px);
+  z-index: 2;
+}
+body main .start {
+  margin-bottom: 10px;
+}
+body main .start__button {
+  font-size: 22px;
+  color: #fbff00;
+  background-color: #e7853e;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  border: 1px solid yellow;
+  padding: 5px 10px;
+  border-radius: 25%;
+  font-family: "Righteous", cursive;
+}
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #ff0000;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff0000;
+  }
+  100% {
+    box-shadow: 0 0 5px #ff0000;
+  }
+}
+body main .start__button {
+  animation: glowing 1300ms infinite;
+}
