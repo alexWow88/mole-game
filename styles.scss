@@ -4,10 +4,10 @@
 }
 
 body {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   background-image: url("../background.jpg");
@@ -40,13 +40,13 @@ body {
   }
   main{
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: center;
     max-width: 500px;
     .holes {
       display: flex;
-      padding-top: 90px;
+      // padding-top: 90px;
       justify-content: center;
       flex-direction: column;
       align-items: center;
@@ -188,6 +188,7 @@ body {
       }
     }
     .start{
+      margin-bottom: 10px;
       &__button {
         font-size: 22px;
         color: rgb(251, 255, 0);
