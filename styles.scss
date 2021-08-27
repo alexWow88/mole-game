@@ -60,6 +60,10 @@ body {
         margin-bottom: 20px;
         &__area{
           width: 80%;
+          // display: flex;
+          // flex-direction: column;
+          // justify-content: center;
+          // align-items: center;
           .mole {
             width: 100%;
             visibility: hidden;
@@ -173,15 +177,12 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // margin:23px 0 50px 0;
       text-align: center;
       color: rgb(255, 51, 0);
       text-shadow: 1px 1px 2px #eeff00, 0 0 25px #ffe600, 0 0 5px #ffae00;
       padding: 10px;
       &__sign{
-        // margin:10px 0 20px 0;
         width: 60%;
-        // position: absolute;
         transform: translate(-5px, 0);
       }
       &__display {
