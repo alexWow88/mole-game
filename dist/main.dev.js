@@ -23,7 +23,9 @@ var moleNine = document.querySelector(".mole-9");
 var moleTen = document.querySelector(".mole-10");
 var moleAll = document.querySelectorAll(".mole");
 var scoreDisplay = document.querySelector(".score__display__result");
+var gameOverDisplay = document.querySelector(".gameover-display");
 var count = 0;
+var timeOutTrigger = 0;
 moleAll.forEach(function (element) {
   return element.classList.add("active");
 });
@@ -89,6 +91,13 @@ var gameStart = function gameStart() {
     if (randNum === 9) {
       removeActive();
       moleNine.setAttribute("class", "mole-9 mole active");
+    }
+
+    timeOutTrigger += 1;
+    console.log(timeOutTrigger);
+
+    if (timeOutTrigger >= 10) {
+      gameOverDisplay.classList.add("display-active");
     }
 
     console.log(randNum);

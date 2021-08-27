@@ -30,8 +30,10 @@ const moleNine = document.querySelector(".mole-9");
 const moleTen = document.querySelector(".mole-10");
 const moleAll = document.querySelectorAll(".mole");
 const scoreDisplay = document.querySelector(".score__display__result");
+const gameOverDisplay = document.querySelector(".gameover-display");
 
 let count = 0;
+let timeOutTrigger = 0;
 
 moleAll.forEach(element => element.classList.add("active"));
 
@@ -47,7 +49,7 @@ const removeActive = () => {
 }
 const gameStart = () => {
   startButton.classList.remove("active");
-  setInterval(function(){    
+    setInterval(function(){    
     let randNum = Math.floor((Math.random() * 10) + 1); 
   
     if (randNum === 1) {
@@ -85,6 +87,11 @@ const gameStart = () => {
     if (randNum === 9) {
       removeActive();
       moleNine.setAttribute("class", "mole-9 mole active")
+    }
+    timeOutTrigger += 1; 
+    console.log(timeOutTrigger);
+    if (timeOutTrigger >= 10) {
+      gameOverDisplay.classList.add("display-active")
     }
     console.log(randNum);
   }, 1000);

@@ -221,3 +221,19 @@ body main .start__button {
   text-shadow: 1px 1px 10px black, 0 0 100px grey, 0 0 20px grey;
   border: 1px solid black;
 }
+body main .gameover-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  background-color: rgba(165, 42, 42, 0.952);
+  color: #fbff00;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  z-index: 99;
+}
+body main .display-active {
+  visibility: visible;
+}

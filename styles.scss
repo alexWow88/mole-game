@@ -220,5 +220,21 @@ body {
       border:1px solid black;
     }
   }
+  .gameover-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width:100vw;
+    height: 100vh;
+    visibility: hidden;
+    background-color: rgba(165, 42, 42, 0.952);
+    color: rgb(251, 255, 0);
+    text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+    z-index: 99;
+  }
+  .display-active {
+    visibility: visible;
+  }
 }
 }
