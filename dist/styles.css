@@ -56,13 +56,13 @@ body main .holes {
 body main .holes__row__1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
   width: 70%;
   text-align: center;
   margin-bottom: 20px;
 }
 body main .holes__row__1__area {
-  width: 80%;
+  width: 100%;
 }
 body main .holes__row__1__area .mole {
   width: 100%;
@@ -95,12 +95,12 @@ body main .holes__row__1__area div {
 body main .holes__row__2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 13px;
+  gap: 25px;
   width: 80%;
   margin-bottom: 25px;
 }
 body main .holes__row__2__area {
-  width: 80%;
+  width: 100%;
 }
 body main .holes__row__2__area .mole {
   width: 100%;
@@ -133,11 +133,11 @@ body main .holes__row__2__area div {
 body main .holes__row__3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
+  gap: 30px;
   width: 95%;
 }
 body main .holes__row__3__area {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }

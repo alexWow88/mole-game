@@ -54,16 +54,12 @@ body {
       &__row__1{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
+        gap: 20px;
         width: 70%;
         text-align: center;
         margin-bottom: 20px;
         &__area{
-          width: 80%;
-          // display: flex;
-          // flex-direction: column;
-          // justify-content: center;
-          // align-items: center;
+          width: 100%;
           .mole {
             width: 100%;
             visibility: hidden;
@@ -97,11 +93,11 @@ body {
       &__row__2 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 13px;
+        gap: 25px;
         width: 80%;
         margin-bottom: 25px;
         &__area {
-          width: 80%;
+          width: 100%;
           .mole {
             width: 100%;
             visibility: hidden;
@@ -135,10 +131,10 @@ body {
       &__row__3{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 16px;
+        gap: 30px;
         width: 95%;
         &__area{
-          width: 80%;
+          width: 100%;
           display: flex;
           flex-direction: column;
           .mole {

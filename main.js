@@ -35,7 +35,7 @@ let count = 0;
 
 moleAll.forEach(element => element.classList.add("active"));
 
-const scoreAcc = () => {
+const incrementScore = () => {
   count += 1;
   scoreDisplay.innerHTML = count;
 }
@@ -89,13 +89,13 @@ const gameStart = () => {
   }, 1000);
 }
 
-moleOne.addEventListener("click", function () {scoreAcc()});
-moleTwo.addEventListener("click", function () {scoreAcc()});
-moleThree.addEventListener("click", function () {scoreAcc()});
-moleFour.addEventListener("click", function () {scoreAcc()});
-moleFive.addEventListener("click", function () {scoreAcc()});
-moleSix.addEventListener("click", function () {scoreAcc()});
-moleSeven.addEventListener("click", function () {scoreAcc()});
-moleEight.addEventListener("click", function () {scoreAcc()});
-moleNine.addEventListener("click", function () {scoreAcc()});
-startButton.addEventListener("click", function () {gameStart()});
+moleOne.addEventListener("click", incrementScore);
+moleTwo.addEventListener("click", incrementScore);
+moleThree.addEventListener("click", incrementScore);
+moleFour.addEventListener("click", incrementScore);
+moleFive.addEventListener("click", incrementScore);
+moleSix.addEventListener("click", incrementScore);
+moleSeven.addEventListener("click", incrementScore);
+moleEight.addEventListener("click", incrementScore);
+moleNine.addEventListener("click", incrementScore);
+startButton.addEventListener("click", gameStart);
