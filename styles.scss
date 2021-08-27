@@ -4,6 +4,10 @@
 }
 
 body {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   height: 100vh;
   width: 100vw;
   background-image: url("../background.jpg");
@@ -18,6 +22,7 @@ body {
     color: rgb(255, 51, 0);
     text-shadow: 1px 1px 2px #eeff00, 0 0 25px #ffe600, 0 0 5px #ffae00;
     padding: 40px;
+    max-width: 500px;
     .game-name {
       display: flex;
       text-align: center;
@@ -38,6 +43,7 @@ body {
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
+    max-width: 500px;
     .holes {
       display: flex;
       padding-top: 90px;
@@ -59,6 +65,20 @@ body {
           }
           .active {
             visibility: visible;
+          }
+          @keyframes fadeUp {
+            0% {
+                transform: translate(0px, 25px);
+            }         
+            50% {
+                transform: translate(0px, 10px);
+            }         
+            100% {
+                transform: translate(0px, 0px);
+            }
+          }
+          .active {
+            animation: fadeUp 100ms;
           }
           div {
             background-color: brown;
@@ -84,6 +104,20 @@ body {
           .active {
             visibility: visible;
           }
+          @keyframes fadeUp {
+            0% {
+                transform: translate(0px, 25px);
+            }         
+            50% {
+                transform: translate(0px, 10px);
+            }         
+            100% {
+                transform: translate(0px, 0px);
+            }
+          }
+          .active {
+            animation: fadeUp 100ms;
+          }
           div {
             background-color: brown;
             border:1px solid black;
@@ -108,6 +142,20 @@ body {
           }
           .active {
             visibility: visible;
+          }
+          @keyframes fadeUp {
+            0% {
+                transform: translate(0px, 25px);
+            }         
+            50% {
+                transform: translate(0px, 10px);
+            }         
+            100% {
+                transform: translate(0px, 0px);
+            }
+          }
+          .active {
+            animation: fadeUp 100ms;
           }
           div {
             background-color: brown;
