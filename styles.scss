@@ -54,16 +54,12 @@ body {
       &__row__1{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
+        gap: 20px;
         width: 70%;
         text-align: center;
         margin-bottom: 20px;
         &__area{
-          width: 80%;
-          // display: flex;
-          // flex-direction: column;
-          // justify-content: center;
-          // align-items: center;
+          width: 100%;
           .mole {
             width: 100%;
             visibility: hidden;
@@ -97,11 +93,11 @@ body {
       &__row__2 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 13px;
+        gap: 25px;
         width: 80%;
         margin-bottom: 25px;
         &__area {
-          width: 80%;
+          width: 100%;
           .mole {
             width: 100%;
             visibility: hidden;
@@ -135,10 +131,10 @@ body {
       &__row__3{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 16px;
+        gap: 30px;
         width: 95%;
         &__area{
-          width: 80%;
+          width: 100%;
           display: flex;
           flex-direction: column;
           .mole {
@@ -193,15 +189,11 @@ body {
     }
     .start{
       margin-bottom: 10px;
-      &__button {
-        font-size: 22px;
+      .active {
         color: rgb(251, 255, 0);
         background-color: rgb(231, 133, 62);
         text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
         border:1px solid yellow;
-        padding: 5px 10px;
-        border-radius: 25%;
-        font-family: 'Righteous', cursive;
       }
       @keyframes glowing {
         0% {
@@ -214,9 +206,112 @@ body {
           box-shadow: 0 0 5px #ff0000;
         }
     }
-    &__button {
+    .active {
       animation: glowing 1300ms infinite;
     }
+    &__button{
+      font-size: 22px;
+      padding: 5px 10px;
+      border-radius: 25%;
+      font-family: 'Righteous', cursive;
+      color: black;
+      background-color: rgb(155, 154, 154);
+      text-shadow: 1px 1px 10px black, 0 0 100px grey, 0 0 20px grey;
+      border:1px solid black;
+    }
   }
+  .gameover-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width:100vw;
+    height: 100vh;
+    visibility: hidden;
+    background-color: rgba(165, 42, 42, 0.952);
+    font-size: 30px;
+    color: rgb(251, 255, 0);
+    text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+    z-index: 99;
+    &__your-score {
+      padding-top: 3px;
+    }
+    &__score {
+      font-size: 50px;
+      animation: pulseEnlarge 1300ms infinite;
+    }
+    @keyframes pulseEnlarge {
+      0% {
+        transform: scale(1 , 1);
+      }
+      25% {
+        transform: scale(1.1 , 1.1);
+      }
+      50% {
+        transform: scale(1.2 , 1.2);
+      }
+      75% {
+        transform: scale(1.1 , 1.1);
+      }
+      100% {
+        transform: scale(1 , 1);
+      }
+    }
+    &__highscores {
+      padding: 15px 0 5px 0;
+      font-size: 25px;
+    }
+    &__highscore-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 80%;
+      text-align: center;
+    }
+    &__player {
+      padding-top: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.8fr;
+      gap: 10px;
+      width: 80%;
+      &__input {
+        background-color: rgba(165, 42, 42, 0.952);
+        border-radius: 10px;
+        border: 1px solid yellow;
+        font-size: 20px;
+        font-family: 'Righteous', cursive;
+        color: rgb(251, 255, 0);
+        text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+        width: 100%;
+        text-align: center;
+      }
+      &__submit {
+        font-family: 'Righteous', cursive;
+        color: rgb(251, 255, 0);
+        text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+        background-color: rgb(231, 133, 62);
+        border:1px solid yellow;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #ff0000;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+    }
+    &__retry-button {
+      margin-top: 25px;
+      padding: 10px;
+      font-family: 'Righteous', cursive;
+      color: rgb(251, 255, 0);
+      background-color: rgb(231, 133, 62);
+      text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+      border:1px solid yellow;
+      border-radius: 10px;
+      font-size: 22px;
+      box-shadow: 0 0 20px #ff0000;
+    }
+  }
+    .display-active {
+      visibility: visible;
+    }
 }
 }

@@ -30,12 +30,27 @@ const moleNine = document.querySelector(".mole-9");
 const moleTen = document.querySelector(".mole-10");
 const moleAll = document.querySelectorAll(".mole");
 const scoreDisplay = document.querySelector(".score__display__result");
+const gameOverDisplay = document.querySelector(".gameover-display");
+const gameOverScore = document.querySelector(".gameover-display__score");
+const highScorestopFive = document.querySelector(".gameover-display__highscore-list");
+const playerName = document.querySelector(".gameover-display__player__input");
+const highScoreSubmit = document.querySelector(".gameover-display__player__submit");
+const GoAgainButton = document.querySelector(".gameover-display__retry-button");
 
 let count = 0;
+let timeOutTrigger = 0;
+let topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]];
+highScorestopFive.innerHTML = `
+<div>1.</div><div>${topFive[0][0]}</div><div>${topFive[0][1]}</div>
+<div>2.</div><div>${topFive[1][0]}</div><div>${topFive[1][1]}</div>
+<div>3.</div><div>${topFive[2][0]}</div><div>${topFive[2][1]}</div>
+<div>4.</div><div>${topFive[3][0]}</div><div>${topFive[3][1]}</div>
+<div>5.</div><div>${topFive[4][0]}</div><div>${topFive[4][1]}</div>
+`
 
 moleAll.forEach(element => element.classList.add("active"));
 
-const scoreAcc = () => {
+const incrementScore = () => {
   count += 1;
   scoreDisplay.innerHTML = count;
 }
@@ -46,7 +61,8 @@ const removeActive = () => {
   }})
 }
 const gameStart = () => {
-  setInterval(function(){    
+  startButton.classList.remove("active");
+    let timingFunction = setInterval(function(){    
     let randNum = Math.floor((Math.random() * 10) + 1); 
   
     if (randNum === 1) {
@@ -85,17 +101,48 @@ const gameStart = () => {
       removeActive();
       moleNine.setAttribute("class", "mole-9 mole active")
     }
+    timeOutTrigger += 1; 
+    console.log(timeOutTrigger);
+    if (timeOutTrigger >= 15) {
+      gameOverDisplay.classList.add("display-active")
+      gameOverScore.innerHTML = count;
+      clearInterval(timingFunction);
+    }
     console.log(randNum);
   }, 1000);
 }
+const updateHighscores = (e) => {
+  e.preventDefault();
+  topFive[5] = [playerName.value, count];
+  topFive = topFive.sort((a , b) => (b[1] - a[1]));
+  console.table(topFive);
+  highScorestopFive.innerHTML = `
+  <div>1.</div><div>${topFive[0][0]}</div><div>${topFive[0][1]}</div>
+  <div>2.</div><div>${topFive[1][0]}</div><div>${topFive[1][1]}</div>
+  <div>3.</div><div>${topFive[2][0]}</div><div>${topFive[2][1]}</div>
+  <div>4.</div><div>${topFive[3][0]}</div><div>${topFive[3][1]}</div>
+  <div>5.</div><div>${topFive[4][0]}</div><div>${topFive[4][1]}</div>
+  `
+}
+const resetGame = () => {
+  count = 0;
+  scoreDisplay.innerHTML = count;
+  timeOutTrigger = 0;
+  removeActive();
+  moleAll.forEach(element => element.classList.add("active"));
+  startButton.classList.add("active");
+  gameOverDisplay.classList.remove("display-active")
+}
 
-moleOne.addEventListener("click", function () {scoreAcc()});
-moleTwo.addEventListener("click", function () {scoreAcc()});
-moleThree.addEventListener("click", function () {scoreAcc()});
-moleFour.addEventListener("click", function () {scoreAcc()});
-moleFive.addEventListener("click", function () {scoreAcc()});
-moleSix.addEventListener("click", function () {scoreAcc()});
-moleSeven.addEventListener("click", function () {scoreAcc()});
-moleEight.addEventListener("click", function () {scoreAcc()});
-moleNine.addEventListener("click", function () {scoreAcc()});
-startButton.addEventListener("click", function () {gameStart()});
+moleOne.addEventListener("click", incrementScore);
+moleTwo.addEventListener("click", incrementScore);
+moleThree.addEventListener("click", incrementScore);
+moleFour.addEventListener("click", incrementScore);
+moleFive.addEventListener("click", incrementScore);
+moleSix.addEventListener("click", incrementScore);
+moleSeven.addEventListener("click", incrementScore);
+moleEight.addEventListener("click", incrementScore);
+moleNine.addEventListener("click", incrementScore);
+startButton.addEventListener("click", gameStart);
+highScoreSubmit.addEventListener("click", updateHighscores);
+GoAgainButton.addEventListener("click", resetGame);

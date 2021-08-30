@@ -56,13 +56,13 @@ body main .holes {
 body main .holes__row__1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
   width: 70%;
   text-align: center;
   margin-bottom: 20px;
 }
 body main .holes__row__1__area {
-  width: 80%;
+  width: 100%;
 }
 body main .holes__row__1__area .mole {
   width: 100%;
@@ -95,12 +95,12 @@ body main .holes__row__1__area div {
 body main .holes__row__2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 13px;
+  gap: 25px;
   width: 80%;
   margin-bottom: 25px;
 }
 body main .holes__row__2__area {
-  width: 80%;
+  width: 100%;
 }
 body main .holes__row__2__area .mole {
   width: 100%;
@@ -133,11 +133,11 @@ body main .holes__row__2__area div {
 body main .holes__row__3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
+  gap: 30px;
   width: 95%;
 }
 body main .holes__row__3__area {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -191,15 +191,11 @@ body main .score__display {
 body main .start {
   margin-bottom: 10px;
 }
-body main .start__button {
-  font-size: 22px;
+body main .start .active {
   color: #fbff00;
   background-color: #e7853e;
   text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
   border: 1px solid yellow;
-  padding: 5px 10px;
-  border-radius: 25%;
-  font-family: "Righteous", cursive;
 }
 @keyframes glowing {
   0% {
@@ -212,6 +208,109 @@ body main .start__button {
     box-shadow: 0 0 5px #ff0000;
   }
 }
-body main .start__button {
+body main .start .active {
   animation: glowing 1300ms infinite;
+}
+body main .start__button {
+  font-size: 22px;
+  padding: 5px 10px;
+  border-radius: 25%;
+  font-family: "Righteous", cursive;
+  color: black;
+  background-color: #9b9a9a;
+  text-shadow: 1px 1px 10px black, 0 0 100px grey, 0 0 20px grey;
+  border: 1px solid black;
+}
+body main .gameover-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  background-color: rgba(165, 42, 42, 0.952);
+  font-size: 30px;
+  color: #fbff00;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  z-index: 99;
+}
+body main .gameover-display__your-score {
+  padding-top: 3px;
+}
+body main .gameover-display__score {
+  font-size: 50px;
+  animation: pulseEnlarge 1300ms infinite;
+}
+@keyframes pulseEnlarge {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.1, 1.1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  75% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+body main .gameover-display__highscores {
+  padding: 15px 0 5px 0;
+  font-size: 25px;
+}
+body main .gameover-display__highscore-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  text-align: center;
+}
+body main .gameover-display__player {
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  gap: 10px;
+  width: 80%;
+}
+body main .gameover-display__player__input {
+  background-color: rgba(165, 42, 42, 0.952);
+  border-radius: 10px;
+  border: 1px solid yellow;
+  font-size: 20px;
+  font-family: "Righteous", cursive;
+  color: #fbff00;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  width: 100%;
+  text-align: center;
+}
+body main .gameover-display__player__submit {
+  font-family: "Righteous", cursive;
+  color: #fbff00;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  background-color: #e7853e;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff0000;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+body main .gameover-display__retry-button {
+  margin-top: 25px;
+  padding: 10px;
+  font-family: "Righteous", cursive;
+  color: #fbff00;
+  background-color: #e7853e;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  font-size: 22px;
+  box-shadow: 0 0 20px #ff0000;
+}
+body main .display-active {
+  visibility: visible;
 }
