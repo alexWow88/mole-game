@@ -260,6 +260,45 @@ body main .gameover-display__score {
     transform: scale(1, 1);
   }
 }
+body main .gameover-display__highscores {
+  padding: 15px 0 5px 0;
+  font-size: 25px;
+}
+body main .gameover-display__highscore-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  text-align: center;
+}
+body main .gameover-display__player {
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  gap: 10px;
+  width: 80%;
+}
+body main .gameover-display__player__input {
+  background-color: rgba(165, 42, 42, 0.952);
+  border-radius: 10px;
+  border: 1px solid yellow;
+  font-size: 20px;
+  font-family: "Righteous", cursive;
+  color: #fbff00;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  width: 100%;
+  text-align: center;
+}
+body main .gameover-display__player__submit {
+  font-family: "Righteous", cursive;
+  color: #fbff00;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  background-color: #e7853e;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff0000;
+  font-size: 20px;
+  text-transform: uppercase;
+}
 body main .display-active {
   visibility: visible;
 }

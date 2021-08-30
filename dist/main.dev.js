@@ -25,8 +25,13 @@ var moleAll = document.querySelectorAll(".mole");
 var scoreDisplay = document.querySelector(".score__display__result");
 var gameOverDisplay = document.querySelector(".gameover-display");
 var gameOverScore = document.querySelector(".gameover-display__score");
+var highScorestopFive = document.querySelector(".gameover-display__highscore-list");
+var playerName = document.querySelector(".gameover-display__player__input");
+var highScoreSubmit = document.querySelector(".gameover-display__player__submit");
 var count = 0;
 var timeOutTrigger = 0;
+var topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]];
+highScorestopFive.innerHTML = "\n<div>1.</div><div>".concat(topFive[0][0], "</div><div>").concat(topFive[0][1], "</div>\n<div>2.</div><div>").concat(topFive[1][0], "</div><div>").concat(topFive[1][1], "</div>\n<div>3.</div><div>").concat(topFive[2][0], "</div><div>").concat(topFive[2][1], "</div>\n<div>4.</div><div>").concat(topFive[3][0], "</div><div>").concat(topFive[3][1], "</div>\n<div>5.</div><div>").concat(topFive[4][0], "</div><div>").concat(topFive[4][1], "</div>\n");
 moleAll.forEach(function (element) {
   return element.classList.add("active");
 });
@@ -106,6 +111,15 @@ var gameStart = function gameStart() {
   }, 1000);
 };
 
+var updateHighscores = function updateHighscores(e) {
+  e.preventDefault();
+  topFive[5] = [playerName.value, count];
+  topFive = topFive.sort(function (a, b) {
+    return a - b;
+  });
+  console.table(topFive);
+};
+
 moleOne.addEventListener("click", incrementScore);
 moleTwo.addEventListener("click", incrementScore);
 moleThree.addEventListener("click", incrementScore);
@@ -116,3 +130,4 @@ moleSeven.addEventListener("click", incrementScore);
 moleEight.addEventListener("click", incrementScore);
 moleNine.addEventListener("click", incrementScore);
 startButton.addEventListener("click", gameStart);
+highScoreSubmit.addEventListener("click", updateHighscores);

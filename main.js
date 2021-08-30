@@ -32,9 +32,20 @@ const moleAll = document.querySelectorAll(".mole");
 const scoreDisplay = document.querySelector(".score__display__result");
 const gameOverDisplay = document.querySelector(".gameover-display");
 const gameOverScore = document.querySelector(".gameover-display__score");
+const highScorestopFive = document.querySelector(".gameover-display__highscore-list");
+const playerName = document.querySelector(".gameover-display__player__input");
+const highScoreSubmit = document.querySelector(".gameover-display__player__submit");
 
 let count = 0;
 let timeOutTrigger = 0;
+let topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]];
+highScorestopFive.innerHTML = `
+<div>1.</div><div>${topFive[0][0]}</div><div>${topFive[0][1]}</div>
+<div>2.</div><div>${topFive[1][0]}</div><div>${topFive[1][1]}</div>
+<div>3.</div><div>${topFive[2][0]}</div><div>${topFive[2][1]}</div>
+<div>4.</div><div>${topFive[3][0]}</div><div>${topFive[3][1]}</div>
+<div>5.</div><div>${topFive[4][0]}</div><div>${topFive[4][1]}</div>
+`
 
 moleAll.forEach(element => element.classList.add("active"));
 
@@ -98,6 +109,12 @@ const gameStart = () => {
     console.log(randNum);
   }, 1000);
 }
+const updateHighscores = (e) => {
+  e.preventDefault();
+  topFive[5] = [playerName.value, count];
+  topFive = topFive.sort((a , b) => (a - b));
+  console.table(topFive);
+}
 
 moleOne.addEventListener("click", incrementScore);
 moleTwo.addEventListener("click", incrementScore);
@@ -109,3 +126,4 @@ moleSeven.addEventListener("click", incrementScore);
 moleEight.addEventListener("click", incrementScore);
 moleNine.addEventListener("click", incrementScore);
 startButton.addEventListener("click", gameStart);
+highScoreSubmit.addEventListener("click", updateHighscores);
