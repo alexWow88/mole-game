@@ -115,9 +115,10 @@ var updateHighscores = function updateHighscores(e) {
   e.preventDefault();
   topFive[5] = [playerName.value, count];
   topFive = topFive.sort(function (a, b) {
-    return a - b;
+    return b[1] - a[1];
   });
   console.table(topFive);
+  highScorestopFive.innerHTML = "\n  <div>1.</div><div>".concat(topFive[0][0], "</div><div>").concat(topFive[0][1], "</div>\n  <div>2.</div><div>").concat(topFive[1][0], "</div><div>").concat(topFive[1][1], "</div>\n  <div>3.</div><div>").concat(topFive[2][0], "</div><div>").concat(topFive[2][1], "</div>\n  <div>4.</div><div>").concat(topFive[3][0], "</div><div>").concat(topFive[3][1], "</div>\n  <div>5.</div><div>").concat(topFive[4][0], "</div><div>").concat(topFive[4][1], "</div>\n  ");
 };
 
 moleOne.addEventListener("click", incrementScore);

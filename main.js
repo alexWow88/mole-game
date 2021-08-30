@@ -112,8 +112,15 @@ const gameStart = () => {
 const updateHighscores = (e) => {
   e.preventDefault();
   topFive[5] = [playerName.value, count];
-  topFive = topFive.sort((a , b) => (a - b));
+  topFive = topFive.sort((a , b) => (b[1] - a[1]));
   console.table(topFive);
+  highScorestopFive.innerHTML = `
+  <div>1.</div><div>${topFive[0][0]}</div><div>${topFive[0][1]}</div>
+  <div>2.</div><div>${topFive[1][0]}</div><div>${topFive[1][1]}</div>
+  <div>3.</div><div>${topFive[2][0]}</div><div>${topFive[2][1]}</div>
+  <div>4.</div><div>${topFive[3][0]}</div><div>${topFive[3][1]}</div>
+  <div>5.</div><div>${topFive[4][0]}</div><div>${topFive[4][1]}</div>
+  `
 }
 
 moleOne.addEventListener("click", incrementScore);
