@@ -61,7 +61,7 @@ const removeActive = () => {
 }
 const gameStart = () => {
   startButton.classList.remove("active");
-    setInterval(function(){    
+    let timingFunction = setInterval(function(){    
     let randNum = Math.floor((Math.random() * 10) + 1); 
   
     if (randNum === 1) {
@@ -105,6 +105,7 @@ const gameStart = () => {
     if (timeOutTrigger >= 15) {
       gameOverDisplay.classList.add("display-active")
       gameOverScore.innerHTML = count;
+      clearInterval(timingFunction);
     }
     console.log(randNum);
   }, 1000);
