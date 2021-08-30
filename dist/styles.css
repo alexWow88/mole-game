@@ -39,6 +39,7 @@ body header img {
   position: absolute;
   transform: translate(-10px, 0);
   max-width: 460px;
+  z-index: 2;
 }
 body main {
   display: flex;
@@ -46,6 +47,7 @@ body main {
   flex-direction: column;
   align-items: center;
   max-width: 500px;
+  z-index: 3;
 }
 body main .holes {
   display: flex;
@@ -313,4 +315,27 @@ body main .gameover-display__retry-button {
 }
 body main .display-active {
   visibility: visible;
+}
+
+@media only screen and (max-width: 360px) {
+  body header .game-name {
+    font-size: 26px;
+    transform: translate(0, 5px);
+  }
+  body main .score h1 {
+    font-size: 20px;
+    padding-bottom: 5px;
+    transform: translate(0, 8px);
+  }
+}
+@media only screen and (max-width: 300px) {
+  body header .game-name {
+    font-size: 22px;
+    transform: translate(0, 4px);
+  }
+  body main .score h1 {
+    font-size: 18px;
+    padding-bottom: 5px;
+    transform: translate(0, 10px);
+  }
 }
