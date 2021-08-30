@@ -299,6 +299,18 @@ body main .gameover-display__player__submit {
   font-size: 20px;
   text-transform: uppercase;
 }
+body main .gameover-display__retry-button {
+  margin-top: 25px;
+  padding: 10px;
+  font-family: "Righteous", cursive;
+  color: #fbff00;
+  background-color: #e7853e;
+  text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  font-size: 22px;
+  box-shadow: 0 0 20px #ff0000;
+}
 body main .display-active {
   visibility: visible;
 }

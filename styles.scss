@@ -297,6 +297,18 @@ body {
         text-transform: uppercase;
       }
     }
+    &__retry-button {
+      margin-top: 25px;
+      padding: 10px;
+      font-family: 'Righteous', cursive;
+      color: rgb(251, 255, 0);
+      background-color: rgb(231, 133, 62);
+      text-shadow: 1px 1px 10px #ff0000, 0 0 100px #ff1100, 0 0 20px #ffae00;
+      border:1px solid yellow;
+      border-radius: 10px;
+      font-size: 22px;
+      box-shadow: 0 0 20px #ff0000;
+    }
   }
     .display-active {
       visibility: visible;
