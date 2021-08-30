@@ -35,6 +35,7 @@ const gameOverScore = document.querySelector(".gameover-display__score");
 const highScorestopFive = document.querySelector(".gameover-display__highscore-list");
 const playerName = document.querySelector(".gameover-display__player__input");
 const highScoreSubmit = document.querySelector(".gameover-display__player__submit");
+const GoAgainButton = document.querySelector(".gameover-display__retry-button");
 
 let count = 0;
 let timeOutTrigger = 0;
@@ -123,6 +124,15 @@ const updateHighscores = (e) => {
   <div>5.</div><div>${topFive[4][0]}</div><div>${topFive[4][1]}</div>
   `
 }
+const resetGame = () => {
+  count = 0;
+  scoreDisplay.innerHTML = count;
+  timeOutTrigger = 0;
+  removeActive();
+  moleAll.forEach(element => element.classList.add("active"));
+  startButton.classList.add("active");
+  gameOverDisplay.classList.remove("display-active")
+}
 
 moleOne.addEventListener("click", incrementScore);
 moleTwo.addEventListener("click", incrementScore);
@@ -135,3 +145,4 @@ moleEight.addEventListener("click", incrementScore);
 moleNine.addEventListener("click", incrementScore);
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
+GoAgainButton.addEventListener("click", resetGame);
