@@ -69,6 +69,17 @@ body {
           .active {
             visibility: visible;
           }
+          .bomb {
+            position: absolute;
+            width: 20%;
+            max-width: 100px;
+            visibility: hidden;
+            transform: translate(12px , -20px);
+          }
+          .bomb-active {
+            visibility: visible;
+            animation: fadeUp 100ms;
+          }
           @keyframes fadeUp {
             0% {
                 transform: translate(0px, 25px);
@@ -106,6 +117,17 @@ body {
           }
           .active {
             visibility: visible;
+          }
+          .bomb {
+            position: absolute;
+            width: 22.5%;
+            max-width: 120px;
+            visibility: hidden;
+            transform: translate(12px , -20px);
+          }
+          .bomb-active {
+            visibility: visible;
+            animation: fadeUp 100ms;
           }
           @keyframes fadeUp {
             0% {
@@ -145,6 +167,17 @@ body {
           }
           .active {
             visibility: visible;
+          }
+          .bomb {
+            position: absolute;
+            width: 25%;
+            max-width: 140px;
+            visibility: hidden;
+            transform: translate(12px , -20px);
+          }
+          .bomb-active {
+            visibility: visible;
+            animation: fadeUp 100ms;
           }
           @keyframes fadeUp {
             0% {

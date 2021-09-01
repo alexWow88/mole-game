@@ -36,6 +36,16 @@ const highScorestopFive = document.querySelector(".gameover-display__highscore-l
 const playerName = document.querySelector(".gameover-display__player__input");
 const highScoreSubmit = document.querySelector(".gameover-display__player__submit");
 const GoAgainButton = document.querySelector(".gameover-display__retry-button");
+const bombOne = document.querySelector(".bomb-1");
+const bombTwo = document.querySelector(".bomb-2");
+const bombThree = document.querySelector(".bomb-3");
+const bombFour = document.querySelector(".bomb-4");
+const bombFive = document.querySelector(".bomb-5");
+const bombSix = document.querySelector(".bomb-6");
+const bombSeven = document.querySelector(".bomb-7");
+const bombEight = document.querySelector(".bomb-8");
+const bombNine = document.querySelector(".bomb-9");
+const bombAll = document.querySelectorAll(".bomb");
 
 let count = 0;
 let timeOutTrigger = 0;
@@ -59,6 +69,10 @@ const removeActive = () => {
     if (element.classList.contains("active")) {
       element.classList.remove("active");
   }})
+}
+const minusScore = () => {
+  count -= 5;
+  scoreDisplay.innerHTML = count;
 }
 const gameStart = () => {
   startButton.classList.remove("active");
@@ -146,3 +160,12 @@ moleNine.addEventListener("click", incrementScore);
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
 GoAgainButton.addEventListener("click", resetGame);
+bombOne.addEventListener("click", minusScore);
+bombTwo.addEventListener("click", minusScore);
+bombThree.addEventListener("click", minusScore);
+bombFour.addEventListener("click", minusScore);
+bombFive.addEventListener("click", minusScore);
+bombSix.addEventListener("click", minusScore);
+bombSeven.addEventListener("click", minusScore);
+bombEight.addEventListener("click", minusScore);
+bombNine.addEventListener("click", minusScore);

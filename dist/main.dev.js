@@ -29,6 +29,16 @@ var highScorestopFive = document.querySelector(".gameover-display__highscore-lis
 var playerName = document.querySelector(".gameover-display__player__input");
 var highScoreSubmit = document.querySelector(".gameover-display__player__submit");
 var GoAgainButton = document.querySelector(".gameover-display__retry-button");
+var bombOne = document.querySelector(".bomb-1");
+var bombTwo = document.querySelector(".bomb-2");
+var bombThree = document.querySelector(".bomb-3");
+var bombFour = document.querySelector(".bomb-4");
+var bombFive = document.querySelector(".bomb-5");
+var bombSix = document.querySelector(".bomb-6");
+var bombSeven = document.querySelector(".bomb-7");
+var bombEight = document.querySelector(".bomb-8");
+var bombNine = document.querySelector(".bomb-9");
+var bombAll = document.querySelectorAll(".bomb");
 var count = 0;
 var timeOutTrigger = 0;
 var topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]];
@@ -48,6 +58,11 @@ var removeActive = function removeActive() {
       element.classList.remove("active");
     }
   });
+};
+
+var minusScore = function minusScore() {
+  count -= 5;
+  scoreDisplay.innerHTML = count;
 };
 
 var gameStart = function gameStart() {
@@ -147,3 +162,12 @@ moleNine.addEventListener("click", incrementScore);
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
 GoAgainButton.addEventListener("click", resetGame);
+bombOne.addEventListener("click", minusScore);
+bombTwo.addEventListener("click", minusScore);
+bombThree.addEventListener("click", minusScore);
+bombFour.addEventListener("click", minusScore);
+bombFive.addEventListener("click", minusScore);
+bombSix.addEventListener("click", minusScore);
+bombSeven.addEventListener("click", minusScore);
+bombEight.addEventListener("click", minusScore);
+bombNine.addEventListener("click", minusScore);
