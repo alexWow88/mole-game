@@ -82,6 +82,7 @@ const minusScore = () => {
   removeActiveBomb();
 }
 const gameStart = () => {
+  removeActive();
   startButton.classList.remove("active");
     let timingFunction = setInterval(function(){    
     let randNum = Math.floor((Math.random() * 10) + 1);
@@ -199,6 +200,7 @@ const resetGame = () => {
   scoreDisplay.innerHTML = count;
   timeOutTrigger = 0;
   removeActive();
+  removeActiveBomb();
   moleAll.forEach(element => element.classList.add("active"));
   startButton.classList.add("active");
   gameOverDisplay.classList.remove("display-active")

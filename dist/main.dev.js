@@ -75,6 +75,7 @@ var minusScore = function minusScore() {
 };
 
 var gameStart = function gameStart() {
+  removeActive();
   startButton.classList.remove("active");
   var timingFunction = setInterval(function () {
     var randNum = Math.floor(Math.random() * 10 + 1);
@@ -211,6 +212,7 @@ var resetGame = function resetGame() {
   scoreDisplay.innerHTML = count;
   timeOutTrigger = 0;
   removeActive();
+  removeActiveBomb();
   moleAll.forEach(function (element) {
     return element.classList.add("active");
   });
