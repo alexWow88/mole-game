@@ -283,6 +283,9 @@ body {
         position: absolute;
         transform: translate(0, -15px);
         z-index: 2;
+        &__result {
+          font-size: 20px;
+        }
       }
     }
     .start{
@@ -448,6 +451,43 @@ body {
           font-size: 18px;
           padding-bottom: 5px;
           transform: translate(0 , 10px);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 650px){
+  body {
+    header {
+      .game-name {
+        font-size: 38px;
+        transform: translate(0 , -8px);
+      }
+    }
+    main {
+      .score {
+        h1 {
+          font-size: 32px;
+          padding-bottom: 5px;
+          transform: translate(0 , 5px);
+        }
+        &__display__result {
+          font-size: 27px;
+          transform: translate(0 , -5px);
+        }
+      }
+      .start{
+        &__button {
+          font-size: 32px;
+        }
+      }
+      .gameover-display {
+        .gameover-display__highscore-list {
+          max-width: 450px;
+        }
+        .gameover-display__player {
+          max-width: 360px;
         }
       }
     }

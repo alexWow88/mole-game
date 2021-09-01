@@ -286,6 +286,9 @@ body main .score__display {
   transform: translate(0, -15px);
   z-index: 2;
 }
+body main .score__display__result {
+  font-size: 20px;
+}
 body main .start {
   margin-bottom: 10px;
 }
@@ -433,5 +436,29 @@ body main .display-active {
     font-size: 18px;
     padding-bottom: 5px;
     transform: translate(0, 10px);
+  }
+}
+@media only screen and (min-width: 650px) {
+  body header .game-name {
+    font-size: 38px;
+    transform: translate(0, -8px);
+  }
+  body main .score h1 {
+    font-size: 32px;
+    padding-bottom: 5px;
+    transform: translate(0, 5px);
+  }
+  body main .score__display__result {
+    font-size: 27px;
+    transform: translate(0, -5px);
+  }
+  body main .start__button {
+    font-size: 32px;
+  }
+  body main .gameover-display .gameover-display__highscore-list {
+    max-width: 450px;
+  }
+  body main .gameover-display .gameover-display__player {
+    max-width: 360px;
   }
 }
