@@ -1,26 +1,6 @@
 "use strict";
 
-// Random number generator to pull which phrase will be on screen
-//depending on which random number, different grid?array will be input (phrase). will need separate styling 
-//operator to have 6 guess. must receive inputs via keyboard input
-// unhide numbers if correctly guessed.
-// incorrect guessed, add to list display and add to counter
-// if all letters have been correctly guessed, 
-//timer to count down to zero
-//randomly set a button to active (show mole)
-//log a point when mole is clicked and deactivate button
-//// when timer is out, display score
 var startButton = document.querySelector(".start__button");
-var moleOne = document.querySelector(".mole-1");
-var moleTwo = document.querySelector(".mole-2");
-var moleThree = document.querySelector(".mole-3");
-var moleFour = document.querySelector(".mole-4");
-var moleFive = document.querySelector(".mole-5");
-var moleSix = document.querySelector(".mole-6");
-var moleSeven = document.querySelector(".mole-7");
-var moleEight = document.querySelector(".mole-8");
-var moleNine = document.querySelector(".mole-9");
-var moleTen = document.querySelector(".mole-10");
 var moleAll = document.querySelectorAll(".mole");
 var scoreDisplay = document.querySelector(".score__display__result");
 var gameOverDisplay = document.querySelector(".gameover-display");
@@ -77,6 +57,8 @@ var minusScore = function minusScore(explosionIndex) {
 
 var gameStart = function gameStart() {
   removeActive();
+  count = 0;
+  scoreDisplay.innerHTML = count;
   startButton.classList.remove("active");
   var timingFunction = setInterval(function () {
     var randNum = Math.floor(Math.random() * 10 + 1);
@@ -92,7 +74,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[0].setAttribute("class", "bomb bomb-active");
         } else {
-          moleOne.setAttribute("class", "mole-1 mole active");
+          moleAll[0].setAttribute("class", "mole active");
         }
       }
 
@@ -104,7 +86,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[1].setAttribute("class", "bomb bomb-active");
         } else {
-          moleTwo.setAttribute("class", "mole-2 mole active");
+          moleAll[1].setAttribute("class", "mole active");
         }
       }
 
@@ -116,7 +98,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[2].setAttribute("class", "bomb bomb-active");
         } else {
-          moleThree.setAttribute("class", "mole-3 mole active");
+          moleAll[2].setAttribute("class", "mole active");
         }
       }
 
@@ -128,7 +110,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[3].setAttribute("class", "bomb bomb-active");
         } else {
-          moleFour.setAttribute("class", "mole-4 mole active");
+          moleAll[3].setAttribute("class", "mole active");
         }
       }
 
@@ -140,7 +122,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[4].setAttribute("class", "bomb bomb-active");
         } else {
-          moleFive.setAttribute("class", "mole-5 mole active");
+          moleAll[4].setAttribute("class", "mole active");
         }
       }
 
@@ -152,7 +134,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[5].setAttribute("class", "bomb bomb-active");
         } else {
-          moleSix.setAttribute("class", "mole-6 mole active");
+          moleAll[5].setAttribute("class", "mole active");
         }
       }
 
@@ -164,7 +146,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[6].setAttribute("class", "bomb bomb-active");
         } else {
-          moleSeven.setAttribute("class", "mole-7 mole active");
+          moleAll[6].setAttribute("class", "mole active");
         }
       }
 
@@ -176,7 +158,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[7].setAttribute("class", "bomb bomb-active");
         } else {
-          moleEight.setAttribute("class", "mole-8 mole active");
+          moleAll[7].setAttribute("class", "mole active");
         }
       }
 
@@ -188,7 +170,7 @@ var gameStart = function gameStart() {
         if (randNumBomb >= 8) {
           bombAll[8].setAttribute("class", "bomb bomb-active");
         } else {
-          moleNine.setAttribute("class", "mole-9 mole active");
+          moleAll[8].setAttribute("class", "mole active");
         }
       }
 
