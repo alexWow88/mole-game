@@ -29,16 +29,8 @@ var highScorestopFive = document.querySelector(".gameover-display__highscore-lis
 var playerName = document.querySelector(".gameover-display__player__input");
 var highScoreSubmit = document.querySelector(".gameover-display__player__submit");
 var GoAgainButton = document.querySelector(".gameover-display__retry-button");
-var bombOne = document.querySelector(".bomb-1");
-var bombTwo = document.querySelector(".bomb-2");
-var bombThree = document.querySelector(".bomb-3");
-var bombFour = document.querySelector(".bomb-4");
-var bombFive = document.querySelector(".bomb-5");
-var bombSix = document.querySelector(".bomb-6");
-var bombSeven = document.querySelector(".bomb-7");
-var bombEight = document.querySelector(".bomb-8");
-var bombNine = document.querySelector(".bomb-9");
 var bombAll = document.querySelectorAll(".bomb");
+var explosionAll = document.querySelectorAll(".explosion");
 var count = 0;
 var timeOutTrigger = 0;
 var topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]];
@@ -68,10 +60,19 @@ var removeActiveBomb = function removeActiveBomb() {
   });
 };
 
-var minusScore = function minusScore() {
+var removeActiveExplosion = function removeActiveExplosion() {
+  explosionAll.forEach(function (element) {
+    if (element.classList.contains("explosion-active")) {
+      element.classList.remove("explosion-active");
+    }
+  });
+};
+
+var minusScore = function minusScore(explosionIndex) {
   count -= 5;
   scoreDisplay.innerHTML = count;
   removeActiveBomb();
+  explosionAll[explosionIndex].classList.add("explosion-active");
 };
 
 var gameStart = function gameStart() {
@@ -86,9 +87,10 @@ var gameStart = function gameStart() {
       if (randNum === 1) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombOne.setAttribute("class", "bomb-1 bomb bomb-active");
+          bombAll[0].setAttribute("class", "bomb bomb-active");
         } else {
           moleOne.setAttribute("class", "mole-1 mole active");
         }
@@ -97,9 +99,10 @@ var gameStart = function gameStart() {
       if (randNum === 2) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombTwo.setAttribute("class", "bomb-2 bomb bomb-active");
+          bombAll[1].setAttribute("class", "bomb bomb-active");
         } else {
           moleTwo.setAttribute("class", "mole-2 mole active");
         }
@@ -108,9 +111,10 @@ var gameStart = function gameStart() {
       if (randNum === 3) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombThree.setAttribute("class", "bomb-3 bomb bomb-active");
+          bombAll[2].setAttribute("class", "bomb bomb-active");
         } else {
           moleThree.setAttribute("class", "mole-3 mole active");
         }
@@ -119,9 +123,10 @@ var gameStart = function gameStart() {
       if (randNum === 4) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombFour.setAttribute("class", "bomb-4 bomb bomb-active");
+          bombAll[3].setAttribute("class", "bomb bomb-active");
         } else {
           moleFour.setAttribute("class", "mole-4 mole active");
         }
@@ -130,9 +135,10 @@ var gameStart = function gameStart() {
       if (randNum === 5) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombFive.setAttribute("class", "bomb-5 bomb bomb-active");
+          bombAll[4].setAttribute("class", "bomb bomb-active");
         } else {
           moleFive.setAttribute("class", "mole-5 mole active");
         }
@@ -141,9 +147,10 @@ var gameStart = function gameStart() {
       if (randNum === 6) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombSix.setAttribute("class", "bomb-6 bomb bomb-active");
+          bombAll[5].setAttribute("class", "bomb bomb-active");
         } else {
           moleSix.setAttribute("class", "mole-6 mole active");
         }
@@ -152,9 +159,10 @@ var gameStart = function gameStart() {
       if (randNum === 7) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombSeven.setAttribute("class", "bomb-7 bomb bomb-active");
+          bombAll[6].setAttribute("class", "bomb bomb-active");
         } else {
           moleSeven.setAttribute("class", "mole-7 mole active");
         }
@@ -163,9 +171,10 @@ var gameStart = function gameStart() {
       if (randNum === 8) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombEight.setAttribute("class", "bomb-8 bomb bomb-active");
+          bombAll[7].setAttribute("class", "bomb bomb-active");
         } else {
           moleEight.setAttribute("class", "mole-8 mole active");
         }
@@ -174,9 +183,10 @@ var gameStart = function gameStart() {
       if (randNum === 9) {
         removeActive();
         removeActiveBomb();
+        removeActiveExplosion();
 
         if (randNumBomb >= 8) {
-          bombNine.setAttribute("class", "bomb-9 bomb bomb-active");
+          bombAll[8].setAttribute("class", "bomb bomb-active");
         } else {
           moleNine.setAttribute("class", "mole-9 mole active");
         }
@@ -213,6 +223,7 @@ var resetGame = function resetGame() {
   timeOutTrigger = 0;
   removeActive();
   removeActiveBomb();
+  removeActiveExplosion();
   moleAll.forEach(function (element) {
     return element.classList.add("active");
   });
@@ -220,24 +231,36 @@ var resetGame = function resetGame() {
   gameOverDisplay.classList.remove("display-active");
 };
 
-moleOne.addEventListener("click", incrementScore);
-moleTwo.addEventListener("click", incrementScore);
-moleThree.addEventListener("click", incrementScore);
-moleFour.addEventListener("click", incrementScore);
-moleFive.addEventListener("click", incrementScore);
-moleSix.addEventListener("click", incrementScore);
-moleSeven.addEventListener("click", incrementScore);
-moleEight.addEventListener("click", incrementScore);
-moleNine.addEventListener("click", incrementScore);
+moleAll.forEach(function (index) {
+  return index.addEventListener("click", incrementScore);
+});
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
 GoAgainButton.addEventListener("click", resetGame);
-bombOne.addEventListener("click", minusScore);
-bombTwo.addEventListener("click", minusScore);
-bombThree.addEventListener("click", minusScore);
-bombFour.addEventListener("click", minusScore);
-bombFive.addEventListener("click", minusScore);
-bombSix.addEventListener("click", minusScore);
-bombSeven.addEventListener("click", minusScore);
-bombEight.addEventListener("click", minusScore);
-bombNine.addEventListener("click", minusScore);
+bombAll[0].addEventListener("click", function () {
+  return minusScore(0);
+});
+bombAll[1].addEventListener("click", function () {
+  return minusScore(1);
+});
+bombAll[2].addEventListener("click", function () {
+  return minusScore(2);
+});
+bombAll[3].addEventListener("click", function () {
+  return minusScore(3);
+});
+bombAll[4].addEventListener("click", function () {
+  return minusScore(4);
+});
+bombAll[5].addEventListener("click", function () {
+  return minusScore(5);
+});
+bombAll[6].addEventListener("click", function () {
+  return minusScore(6);
+});
+bombAll[7].addEventListener("click", function () {
+  return minusScore(7);
+});
+bombAll[8].addEventListener("click", function () {
+  return minusScore(8);
+});

@@ -36,15 +36,6 @@ const highScorestopFive = document.querySelector(".gameover-display__highscore-l
 const playerName = document.querySelector(".gameover-display__player__input");
 const highScoreSubmit = document.querySelector(".gameover-display__player__submit");
 const GoAgainButton = document.querySelector(".gameover-display__retry-button");
-const bombOne = document.querySelector(".bomb-1");
-const bombTwo = document.querySelector(".bomb-2");
-const bombThree = document.querySelector(".bomb-3");
-const bombFour = document.querySelector(".bomb-4");
-const bombFive = document.querySelector(".bomb-5");
-const bombSix = document.querySelector(".bomb-6");
-const bombSeven = document.querySelector(".bomb-7");
-const bombEight = document.querySelector(".bomb-8");
-const bombNine = document.querySelector(".bomb-9");
 const bombAll = document.querySelectorAll(".bomb");
 const explosionAll = document.querySelectorAll(".explosion");
 
@@ -102,7 +93,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-1 bomb bomb-active")
+        bombAll[0].setAttribute("class", "bomb bomb-active")
       } else {
       moleOne.setAttribute("class", "mole-1 mole active")
       }
@@ -112,7 +103,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombTwo.setAttribute("class", "bomb-2 bomb bomb-active")
+        bombAll[1].setAttribute("class", "bomb bomb-active")
       } else {
       moleTwo.setAttribute("class", "mole-2 mole active")
       }
@@ -122,7 +113,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombThree.setAttribute("class", "bomb-3 bomb bomb-active")
+        bombAll[2].setAttribute("class", "bomb bomb-active")
       } else {
       moleThree.setAttribute("class", "mole-3 mole active")
       }
@@ -132,7 +123,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombFour.setAttribute("class", "bomb-4 bomb bomb-active")
+        bombAll[3].setAttribute("class", "bomb bomb-active")
       } else {
       moleFour.setAttribute("class", "mole-4 mole active")
       }
@@ -142,7 +133,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombFive.setAttribute("class", "bomb-5 bomb bomb-active")
+        bombAll[4].setAttribute("class", "bomb bomb-active")
       } else {
       moleFive.setAttribute("class", "mole-5 mole active")
       }
@@ -152,7 +143,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombSix.setAttribute("class", "bomb-6 bomb bomb-active")
+        bombAll[5].setAttribute("class", "bomb bomb-active");
       } else {
       moleSix.setAttribute("class", "mole-6 mole active")
       }
@@ -162,7 +153,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombSeven.setAttribute("class", "bomb-7 bomb bomb-active")
+        bombAll[6].setAttribute("class", "bomb bomb-active")
       } else {
       moleSeven.setAttribute("class", "mole-7 mole active")
       }
@@ -172,7 +163,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombEight.setAttribute("class", "bomb-8 bomb bomb-active")
+        bombAll[7].setAttribute("class", "bomb bomb-active")
       } else {
       moleEight.setAttribute("class", "mole-8 mole active")
       }
@@ -182,7 +173,7 @@ const gameStart = () => {
       removeActiveBomb();
       removeActiveExplosion();
       if (randNumBomb >= 8) {
-        bombNine.setAttribute("class", "bomb-9 bomb bomb-active")
+        bombAll[8].setAttribute("class", "bomb bomb-active")
       } else {
       moleNine.setAttribute("class", "mole-9 mole active")
       }
@@ -224,24 +215,16 @@ const resetGame = () => {
   gameOverDisplay.classList.remove("display-active")
 }
 
-moleOne.addEventListener("click", incrementScore);
-moleTwo.addEventListener("click", incrementScore);
-moleThree.addEventListener("click", incrementScore);
-moleFour.addEventListener("click", incrementScore);
-moleFive.addEventListener("click", incrementScore);
-moleSix.addEventListener("click", incrementScore);
-moleSeven.addEventListener("click", incrementScore);
-moleEight.addEventListener("click", incrementScore);
-moleNine.addEventListener("click", incrementScore);
+moleAll.forEach(index => index.addEventListener("click", incrementScore));
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
 GoAgainButton.addEventListener("click", resetGame);
-bombOne.addEventListener("click", () => minusScore(0));
-bombTwo.addEventListener("click", () => minusScore(1));
-bombThree.addEventListener("click", () => minusScore(2));
-bombFour.addEventListener("click", () => minusScore(3));
-bombFive.addEventListener("click", () => minusScore(4));
-bombSix.addEventListener("click", () => minusScore(5));
-bombSeven.addEventListener("click", () => minusScore(6));
-bombEight.addEventListener("click", () => minusScore(7));
-bombNine.addEventListener("click", () => minusScore(8));
+bombAll[0].addEventListener("click", () => minusScore(0));
+bombAll[1].addEventListener("click", () => minusScore(1));
+bombAll[2].addEventListener("click", () => minusScore(2));
+bombAll[3].addEventListener("click", () => minusScore(3));
+bombAll[4].addEventListener("click", () => minusScore(4));
+bombAll[5].addEventListener("click", () => minusScore(5));
+bombAll[6].addEventListener("click", () => minusScore(6));
+bombAll[7].addEventListener("click", () => minusScore(7));
+bombAll[8].addEventListener("click", () => minusScore(8));

@@ -84,6 +84,16 @@ body main .holes__row__1__area .bomb-active {
   visibility: visible;
   animation: fadeUpBomb 100ms;
 }
+body main .holes__row__1__area .explosion {
+  position: absolute;
+  width: 25%;
+  max-width: 100px;
+  visibility: hidden;
+  transform: translate(-5px, -20px);
+}
+body main .holes__row__1__area .explosion-active {
+  visibility: visible;
+}
 @keyframes fadeUp {
   0% {
     transform: translate(0px, 25px);
@@ -143,6 +153,16 @@ body main .holes__row__2__area .bomb {
 body main .holes__row__2__area .bomb-active {
   visibility: visible;
   animation: fadeUpBomb 100ms;
+}
+body main .holes__row__2__area .explosion {
+  position: absolute;
+  width: 27.5%;
+  max-width: 120px;
+  visibility: hidden;
+  transform: translate(-5px, -20px);
+}
+body main .holes__row__2__area .explosion-active {
+  visibility: visible;
 }
 @keyframes fadeUp {
   0% {
@@ -204,6 +224,16 @@ body main .holes__row__3__area .bomb {
 body main .holes__row__3__area .bomb-active {
   visibility: visible;
   animation: fadeUpBomb 100ms;
+}
+body main .holes__row__3__area .explosion {
+  position: absolute;
+  width: 30%;
+  max-width: 140px;
+  visibility: hidden;
+  transform: translate(-5px, -20px);
+}
+body main .holes__row__3__area .explosion-active {
+  visibility: visible;
 }
 @keyframes fadeUp {
   0% {
