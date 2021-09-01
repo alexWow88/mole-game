@@ -70,50 +70,104 @@ const removeActive = () => {
       element.classList.remove("active");
   }})
 }
+const removeActiveBomb = () => {
+  bombAll.forEach(element => {
+    if (element.classList.contains("bomb-active")) {
+      element.classList.remove("bomb-active");
+  }})
+}
 const minusScore = () => {
   count -= 5;
   scoreDisplay.innerHTML = count;
+  removeActiveBomb();
 }
 const gameStart = () => {
   startButton.classList.remove("active");
     let timingFunction = setInterval(function(){    
-    let randNum = Math.floor((Math.random() * 10) + 1); 
+    let randNum = Math.floor((Math.random() * 10) + 1);
+    if (randNum !== 10) {
+    let randNumBomb = Math.floor((Math.random() * 10) + 1); 
   
     if (randNum === 1) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-1 bomb bomb-active")
+      } else {
       moleOne.setAttribute("class", "mole-1 mole active")
+      }
     }
     if (randNum === 2) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-2 bomb bomb-active")
+      } else {
       moleTwo.setAttribute("class", "mole-2 mole active")
+      }
     }
     if (randNum === 3) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-3 bomb bomb-active")
+      } else {
       moleThree.setAttribute("class", "mole-3 mole active")
+      }
     }
     if (randNum === 4) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-4 bomb bomb-active")
+      } else {
       moleFour.setAttribute("class", "mole-4 mole active")
+      }
     }
     if (randNum === 5) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-5 bomb bomb-active")
+      } else {
       moleFive.setAttribute("class", "mole-5 mole active")
+      }
     }
     if (randNum === 6) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-6 bomb bomb-active")
+      } else {
       moleSix.setAttribute("class", "mole-6 mole active")
+      }
     }
     if (randNum === 7) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-7 bomb bomb-active")
+      } else {
       moleSeven.setAttribute("class", "mole-7 mole active")
+      }
     }
     if (randNum === 8) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-8 bomb bomb-active")
+      } else {
       moleEight.setAttribute("class", "mole-8 mole active")
+      }
     }
     if (randNum === 9) {
       removeActive();
+      removeActiveBomb();
+      if (randNumBomb >= 8) {
+        bombOne.setAttribute("class", "bomb-9 bomb bomb-active")
+      } else {
       moleNine.setAttribute("class", "mole-9 mole active")
+      }
     }
     timeOutTrigger += 1; 
     console.log(timeOutTrigger);
@@ -123,6 +177,8 @@ const gameStart = () => {
       clearInterval(timingFunction);
     }
     console.log(randNum);
+    console.log(randNumBomb);
+  }
   }, 1000);
 }
 const updateHighscores = (e) => {

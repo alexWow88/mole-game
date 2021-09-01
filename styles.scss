@@ -78,7 +78,7 @@ body {
           }
           .bomb-active {
             visibility: visible;
-            animation: fadeUp 100ms;
+            animation: fadeUpBomb 100ms;
           }
           @keyframes fadeUp {
             0% {
@@ -89,6 +89,17 @@ body {
             }         
             100% {
                 transform: translate(0px, 0px);
+            }
+          }
+          @keyframes fadeUpBomb {
+            0% {
+                transform: translate(12px, 25px);
+            }         
+            50% {
+                transform: translate(12px, 10px);
+            }         
+            100% {
+                transform: translate(12px, 0px);
             }
           }
           .active {
@@ -127,7 +138,7 @@ body {
           }
           .bomb-active {
             visibility: visible;
-            animation: fadeUp 100ms;
+            animation: fadeUpBomb 100ms;
           }
           @keyframes fadeUp {
             0% {
@@ -138,6 +149,17 @@ body {
             }         
             100% {
                 transform: translate(0px, 0px);
+            }
+          }
+          @keyframes fadeUpBomb {
+            0% {
+                transform: translate(12px, 25px);
+            }         
+            50% {
+                transform: translate(12px, 10px);
+            }         
+            100% {
+                transform: translate(12px, 0px);
             }
           }
           .active {
@@ -177,7 +199,7 @@ body {
           }
           .bomb-active {
             visibility: visible;
-            animation: fadeUp 100ms;
+            animation: fadeUpBomb 100ms;
           }
           @keyframes fadeUp {
             0% {
@@ -188,6 +210,17 @@ body {
             }         
             100% {
                 transform: translate(0px, 0px);
+            }
+          }
+          @keyframes fadeUpBomb {
+            0% {
+                transform: translate(12px, 25px);
+            }         
+            50% {
+                transform: translate(12px, 10px);
+            }         
+            100% {
+                transform: translate(12px, 0px);
             }
           }
           .active {
