@@ -102,7 +102,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-2 bomb bomb-active")
+        bombTwo.setAttribute("class", "bomb-2 bomb bomb-active")
       } else {
       moleTwo.setAttribute("class", "mole-2 mole active")
       }
@@ -111,7 +111,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-3 bomb bomb-active")
+        bombThree.setAttribute("class", "bomb-3 bomb bomb-active")
       } else {
       moleThree.setAttribute("class", "mole-3 mole active")
       }
@@ -120,7 +120,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-4 bomb bomb-active")
+        bombFour.setAttribute("class", "bomb-4 bomb bomb-active")
       } else {
       moleFour.setAttribute("class", "mole-4 mole active")
       }
@@ -129,7 +129,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-5 bomb bomb-active")
+        bombFive.setAttribute("class", "bomb-5 bomb bomb-active")
       } else {
       moleFive.setAttribute("class", "mole-5 mole active")
       }
@@ -138,7 +138,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-6 bomb bomb-active")
+        bombSix.setAttribute("class", "bomb-6 bomb bomb-active")
       } else {
       moleSix.setAttribute("class", "mole-6 mole active")
       }
@@ -147,7 +147,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-7 bomb bomb-active")
+        bombSeven.setAttribute("class", "bomb-7 bomb bomb-active")
       } else {
       moleSeven.setAttribute("class", "mole-7 mole active")
       }
@@ -156,7 +156,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-8 bomb bomb-active")
+        bombEight.setAttribute("class", "bomb-8 bomb bomb-active")
       } else {
       moleEight.setAttribute("class", "mole-8 mole active")
       }
@@ -165,7 +165,7 @@ const gameStart = () => {
       removeActive();
       removeActiveBomb();
       if (randNumBomb >= 8) {
-        bombOne.setAttribute("class", "bomb-9 bomb bomb-active")
+        bombNine.setAttribute("class", "bomb-9 bomb bomb-active")
       } else {
       moleNine.setAttribute("class", "mole-9 mole active")
       }
