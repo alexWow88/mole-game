@@ -27,6 +27,7 @@ moleAll.forEach(element => element.classList.add("active"));
 const incrementScore = () => {
   count += 1;
   scoreDisplay.innerHTML = count;
+  // moleSound();
 }
 const removeActive = () => {
   moleAll.forEach(element => {
@@ -188,6 +189,10 @@ const resetGame = () => {
   startButton.classList.add("active");
   gameOverDisplay.classList.remove("display-active")
 }
+// const moleSound = () => {
+//   var audio = new Audio("assets/moleSound.m4a");
+//   audio.play();
+// }
 
 moleAll.forEach(index => index.addEventListener("click", incrementScore));
 startButton.addEventListener("click", gameStart);
@@ -202,3 +207,4 @@ bombAll[5].addEventListener("click", () => minusScore(5));
 bombAll[6].addEventListener("click", () => minusScore(6));
 bombAll[7].addEventListener("click", () => minusScore(7));
 bombAll[8].addEventListener("click", () => minusScore(8));
+// bombAll.forEach(element => element.addEventListener("click", () => minusScore(bombAll.indexof(element))));

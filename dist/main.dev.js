@@ -21,7 +21,7 @@ moleAll.forEach(function (element) {
 
 var incrementScore = function incrementScore() {
   count += 1;
-  scoreDisplay.innerHTML = count;
+  scoreDisplay.innerHTML = count; // moleSound();
 };
 
 var removeActive = function removeActive() {
@@ -211,7 +211,11 @@ var resetGame = function resetGame() {
   });
   startButton.classList.add("active");
   gameOverDisplay.classList.remove("display-active");
-};
+}; // const moleSound = () => {
+//   var audio = new Audio("assets/moleSound.m4a");
+//   audio.play();
+// }
+
 
 moleAll.forEach(function (index) {
   return index.addEventListener("click", incrementScore);
@@ -245,4 +249,4 @@ bombAll[7].addEventListener("click", function () {
 });
 bombAll[8].addEventListener("click", function () {
   return minusScore(8);
-});
+}); // bombAll.forEach(element => element.addEventListener("click", () => minusScore(bombAll.indexof(element))));
