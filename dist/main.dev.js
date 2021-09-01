@@ -13,7 +13,9 @@ var bombAll = document.querySelectorAll(".bomb");
 var explosionAll = document.querySelectorAll(".explosion");
 var count = 0;
 var timeOutTrigger = 0;
-var topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]];
+var topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]]; // var audio = new Audio("/assets/bensound-theelevatorbossanova.mp3");
+// audio.play();
+
 highScorestopFive.innerHTML = "\n<div>1.</div><div>".concat(topFive[0][0], "</div><div>").concat(topFive[0][1], "</div>\n<div>2.</div><div>").concat(topFive[1][0], "</div><div>").concat(topFive[1][1], "</div>\n<div>3.</div><div>").concat(topFive[2][0], "</div><div>").concat(topFive[2][1], "</div>\n<div>4.</div><div>").concat(topFive[3][0], "</div><div>").concat(topFive[3][1], "</div>\n<div>5.</div><div>").concat(topFive[4][0], "</div><div>").concat(topFive[4][1], "</div>\n");
 moleAll.forEach(function (element) {
   return element.classList.add("active");
@@ -21,7 +23,7 @@ moleAll.forEach(function (element) {
 
 var incrementScore = function incrementScore() {
   count += 1;
-  scoreDisplay.innerHTML = count; // moleSound();
+  scoreDisplay.innerHTML = count;
 };
 
 var removeActive = function removeActive() {
@@ -65,112 +67,17 @@ var gameStart = function gameStart() {
 
     if (randNum !== 10) {
       var randNumBomb = Math.floor(Math.random() * 10 + 1);
+      removeActive();
+      removeActiveBomb();
+      removeActiveExplosion();
 
-      if (randNum === 1) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[0].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[0].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 2) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[1].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[1].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 3) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[2].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[2].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 4) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[3].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[3].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 5) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[4].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[4].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 6) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[5].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[5].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 7) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[6].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[6].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 8) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[7].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[7].setAttribute("class", "mole active");
-        }
-      }
-
-      if (randNum === 9) {
-        removeActive();
-        removeActiveBomb();
-        removeActiveExplosion();
-
-        if (randNumBomb >= 8) {
-          bombAll[8].setAttribute("class", "bomb bomb-active");
-        } else {
-          moleAll[8].setAttribute("class", "mole active");
+      for (var index = 0; index <= 8; index++) {
+        if (randNum === index + 1) {
+          if (randNumBomb >= 8) {
+            bombAll[index].setAttribute("class", "bomb bomb-active");
+          } else {
+            moleAll[index].setAttribute("class", "mole active");
+          }
         }
       }
 
@@ -211,11 +118,7 @@ var resetGame = function resetGame() {
   });
   startButton.classList.add("active");
   gameOverDisplay.classList.remove("display-active");
-}; // const moleSound = () => {
-//   var audio = new Audio("assets/moleSound.m4a");
-//   audio.play();
-// }
-
+};
 
 moleAll.forEach(function (index) {
   return index.addEventListener("click", incrementScore);
@@ -249,4 +152,4 @@ bombAll[7].addEventListener("click", function () {
 });
 bombAll[8].addEventListener("click", function () {
   return minusScore(8);
-}); // bombAll.forEach(element => element.addEventListener("click", () => minusScore(bombAll.indexof(element))));
+}); // bombAll.addEventListener("click", () => minusScore(bombAll.indexof()));
