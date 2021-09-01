@@ -46,6 +46,7 @@ const bombSeven = document.querySelector(".bomb-7");
 const bombEight = document.querySelector(".bomb-8");
 const bombNine = document.querySelector(".bomb-9");
 const bombAll = document.querySelectorAll(".bomb");
+const explosionAll = document.querySelectorAll(".explosion");
 
 let count = 0;
 let timeOutTrigger = 0;
@@ -76,10 +77,17 @@ const removeActiveBomb = () => {
       element.classList.remove("bomb-active");
   }})
 }
-const minusScore = () => {
+const removeActiveExplosion = () => {
+  explosionAll.forEach(element => {
+    if (element.classList.contains("explosion-active")) {
+      element.classList.remove("explosion-active");
+  }})
+}
+const minusScore = (explosionIndex) => {
   count -= 5;
   scoreDisplay.innerHTML = count;
   removeActiveBomb();
+  explosionAll[explosionIndex].classList.add("explosion-active");
 }
 const gameStart = () => {
   removeActive();
@@ -92,6 +100,7 @@ const gameStart = () => {
     if (randNum === 1) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombOne.setAttribute("class", "bomb-1 bomb bomb-active")
       } else {
@@ -101,6 +110,7 @@ const gameStart = () => {
     if (randNum === 2) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombTwo.setAttribute("class", "bomb-2 bomb bomb-active")
       } else {
@@ -110,6 +120,7 @@ const gameStart = () => {
     if (randNum === 3) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombThree.setAttribute("class", "bomb-3 bomb bomb-active")
       } else {
@@ -119,6 +130,7 @@ const gameStart = () => {
     if (randNum === 4) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombFour.setAttribute("class", "bomb-4 bomb bomb-active")
       } else {
@@ -128,6 +140,7 @@ const gameStart = () => {
     if (randNum === 5) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombFive.setAttribute("class", "bomb-5 bomb bomb-active")
       } else {
@@ -137,6 +150,7 @@ const gameStart = () => {
     if (randNum === 6) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombSix.setAttribute("class", "bomb-6 bomb bomb-active")
       } else {
@@ -146,6 +160,7 @@ const gameStart = () => {
     if (randNum === 7) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombSeven.setAttribute("class", "bomb-7 bomb bomb-active")
       } else {
@@ -155,6 +170,7 @@ const gameStart = () => {
     if (randNum === 8) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombEight.setAttribute("class", "bomb-8 bomb bomb-active")
       } else {
@@ -164,6 +180,7 @@ const gameStart = () => {
     if (randNum === 9) {
       removeActive();
       removeActiveBomb();
+      removeActiveExplosion();
       if (randNumBomb >= 8) {
         bombNine.setAttribute("class", "bomb-9 bomb bomb-active")
       } else {
@@ -201,6 +218,7 @@ const resetGame = () => {
   timeOutTrigger = 0;
   removeActive();
   removeActiveBomb();
+  removeActiveExplosion();
   moleAll.forEach(element => element.classList.add("active"));
   startButton.classList.add("active");
   gameOverDisplay.classList.remove("display-active")
@@ -218,12 +236,12 @@ moleNine.addEventListener("click", incrementScore);
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
 GoAgainButton.addEventListener("click", resetGame);
-bombOne.addEventListener("click", minusScore);
-bombTwo.addEventListener("click", minusScore);
-bombThree.addEventListener("click", minusScore);
-bombFour.addEventListener("click", minusScore);
-bombFive.addEventListener("click", minusScore);
-bombSix.addEventListener("click", minusScore);
-bombSeven.addEventListener("click", minusScore);
-bombEight.addEventListener("click", minusScore);
-bombNine.addEventListener("click", minusScore);
+bombOne.addEventListener("click", () => minusScore(0));
+bombTwo.addEventListener("click", () => minusScore(1));
+bombThree.addEventListener("click", () => minusScore(2));
+bombFour.addEventListener("click", () => minusScore(3));
+bombFive.addEventListener("click", () => minusScore(4));
+bombSix.addEventListener("click", () => minusScore(5));
+bombSeven.addEventListener("click", () => minusScore(6));
+bombEight.addEventListener("click", () => minusScore(7));
+bombNine.addEventListener("click", () => minusScore(8));
