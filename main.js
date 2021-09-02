@@ -10,12 +10,16 @@ const GoAgainButton = document.querySelector(".gameover-display__retry-button");
 const bombAll = document.querySelectorAll(".bomb");
 const explosionAll = document.querySelectorAll(".explosion");
 
+
 let count = 0;
 let timeOutTrigger = 0;
 let topFive = [["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0], ["xxxx", 0]];
 
-// var audio = new Audio("/assets/bensound-theelevatorbossanova.mp3");
-// audio.play();
+// setTimeout(function(){ play(); }, 2000);
+// function play() {
+//   var audio = new Audio('./bensound-theelevatorbossanova.mp3');
+//   audio.play();
+// }
 
 highScorestopFive.innerHTML = `
 <div>1.</div><div>${topFive[0][0]}</div><div>${topFive[0][1]}</div>
@@ -61,8 +65,7 @@ const gameStart = () => {
   scoreDisplay.innerHTML = count;
   startButton.classList.remove("active");
   let timingFunction = setInterval(function(){    
-    let randNum = Math.floor((Math.random() * 10) + 1);
-    if (randNum !== 10) {
+    let randNum = Math.floor((Math.random() * 9) + 1);
       let randNumBomb = Math.floor((Math.random() * 10) + 1); 
       removeActive();
       removeActiveBomb();
@@ -87,7 +90,7 @@ const gameStart = () => {
       }
       console.log(randNum);
       console.log(randNumBomb);
-    }
+    
   }, 1000);
 }
 const updateHighscores = (e) => {
@@ -119,13 +122,14 @@ moleAll.forEach(index => index.addEventListener("click", incrementScore));
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
 GoAgainButton.addEventListener("click", resetGame);
-bombAll[0].addEventListener("click", () => minusScore(0));
-bombAll[1].addEventListener("click", () => minusScore(1));
-bombAll[2].addEventListener("click", () => minusScore(2));
-bombAll[3].addEventListener("click", () => minusScore(3));
-bombAll[4].addEventListener("click", () => minusScore(4));
-bombAll[5].addEventListener("click", () => minusScore(5));
-bombAll[6].addEventListener("click", () => minusScore(6));
-bombAll[7].addEventListener("click", () => minusScore(7));
-bombAll[8].addEventListener("click", () => minusScore(8));
+// bombAll[0].addEventListener("click", () => minusScore(0));
+// bombAll[1].addEventListener("click", () => minusScore(1));
+// bombAll[2].addEventListener("click", () => minusScore(2));
+// bombAll[3].addEventListener("click", () => minusScore(3));
+// bombAll[4].addEventListener("click", () => minusScore(4));
+// bombAll[5].addEventListener("click", () => minusScore(5));
+// bombAll[6].addEventListener("click", () => minusScore(6));
+// bombAll[7].addEventListener("click", () => minusScore(7));
+// bombAll[8].addEventListener("click", () => minusScore(8));
+bombAll.forEach((bombElement , index) => bombElement.addEventListener("click", () => minusScore(index)));
 // bombAll.addEventListener("click", () => minusScore(bombAll.indexof()));
