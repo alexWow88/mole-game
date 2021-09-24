@@ -125,18 +125,9 @@ moleAll.forEach(function (index) {
 });
 startButton.addEventListener("click", gameStart);
 highScoreSubmit.addEventListener("click", updateHighscores);
-GoAgainButton.addEventListener("click", resetGame); // bombAll[0].addEventListener("click", () => minusScore(0));
-// bombAll[1].addEventListener("click", () => minusScore(1));
-// bombAll[2].addEventListener("click", () => minusScore(2));
-// bombAll[3].addEventListener("click", () => minusScore(3));
-// bombAll[4].addEventListener("click", () => minusScore(4));
-// bombAll[5].addEventListener("click", () => minusScore(5));
-// bombAll[6].addEventListener("click", () => minusScore(6));
-// bombAll[7].addEventListener("click", () => minusScore(7));
-// bombAll[8].addEventListener("click", () => minusScore(8));
-
+GoAgainButton.addEventListener("click", resetGame);
 bombAll.forEach(function (bombElement, index) {
   return bombElement.addEventListener("click", function () {
     return minusScore(index);
   });
-}); // bombAll.addEventListener("click", () => minusScore(bombAll.indexof()));
+});
