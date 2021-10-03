@@ -1,5 +1,5 @@
-![alt text](./assets/images/game-image-readme.PNG)
-# mole-game
+![alt text](./assets/images/game-image-readme.PNG) ![alt text](./assets/images/mole-midgame-readme.PNG) ![alt text](./assets/images/gameover-image-readme.PNG)
+# Whack-A-Mole Game
 A "whacky" version of Whack-A-Mole with dangerous, bomb-having moles. A single player game which allows for high score saving so you can compete against a friend on the same device by taking turns.
 
 ## General Info 
